@@ -60,7 +60,7 @@ const Dashboard: React.FC = () => {
     : null;
 
   return (
-    <div className="lg:h-screen flex flex-col lg:overflow-hidden relative">
+    <div className="lg:h-[100svh] flex flex-col lg:overflow-hidden relative">
       <Navbar />
       <div className="flex flex-1 sm:flex-row lg:overflow-hidden h-screen sm:w-full ">
         <Sidebar

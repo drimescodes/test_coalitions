@@ -31,7 +31,7 @@ const Sidebar: React.FC<Props> = ({ patients, onSelectPatient, selectedPatientNa
   }, []);
 
   return (
-    <div ref={sidebarRef} className={`sm:sticky top-[6rem] z-20 bg-white max-h-[100svh] rounded-lg fixed sm:w-64 ${isCollapsed ? 'w-[5rem] fixed ' : 'w-64'} shrink-0 border-r border-gray-200 overflow-y-auto scrollbar transition-width duration-300`}>
+    <div ref={sidebarRef} className={`sm:sticky top-[6rem] z-20 bg-white max-h-[100svh] rounded-lg  sm:w-64 ${isCollapsed ? 'w-[5rem]  ' : 'fixed w-64'} shrink-0 border-r border-gray-200 overflow-y-auto scrollbar transition-width duration-300`}>
       <div className="flex h-16 items-center justify-between px-4">
         <button onClick={handleToggleSidebar} className="sm:hidden">
           {isCollapsed ? '>' : '<'}
