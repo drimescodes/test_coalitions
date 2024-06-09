@@ -60,33 +60,34 @@ const Dashboard: React.FC = () => {
     : null;
 
   return (
-    <div className="h-screen flex flex-col overflow-hidden">
+    <div className="lg:h-screen flex flex-col lg:overflow-hidden relative">
       <Navbar />
-      <div className="flex flex-1 overflow-hidden w-full">
+      <div className="flex flex-1 sm:flex-row lg:overflow-hidden h-screen sm:w-full ">
         <Sidebar
           patients={patients}
           onSelectPatient={handleSelectPatient}
           selectedPatientName={selectedPatient ? selectedPatient.name : null}
         />
-        <main className="flex-1 p-4 flex gap-4 overflow-auto scrollbar ">
-          {selectedPatient && mostRecentDiagnosis && (
-            <Main
-              selectedPatient={selectedPatient}
-              mostRecentDiagnosis={mostRecentDiagnosis}
-            />
-          )}
-        </main>
-        <aside className="w-1/5 overflow-auto scrollbar max-h-screen">
-          {selectedPatient && (
-            <section className="bg-white rounded-lg p-6 mb-4">
-              <ProfileCard patient={selectedPatient} className="" />
+        <section className="flex flex-col lg:flex-row overflow-auto w-full">
+          <main className="flex-1 sm:p-4 flex p-2 gap-4 overflow-auto scrollbar">
+            {selectedPatient && mostRecentDiagnosis && (
+              <Main
+                selectedPatient={selectedPatient}
+                mostRecentDiagnosis={mostRecentDiagnosis}
+              />
+            )}
+          </main>
+          <aside className="lg:w-1/5 lg:overflow-auto scrollbar max-h-screen ">
+            {selectedPatient && (
+              <section className="bg-white rounded-lg p-6 mb-4 w-[93%] mx-auto">
+                <ProfileCard patient={selectedPatient} className="" />
+              </section>
+            )}
+            <section className="bg-white mt-8 rounded-lg p-6 overflow-auto text-[#072635] mb-4 w-[93%] mx-auto">
+              <LabResults labResults={selectedPatient?.lab_results || []} />
             </section>
-          )}
-
-          <section className="bg-white mt-8 rounded-lg p-6 overflow-auto text-[#072635]">
-            <LabResults labResults={selectedPatient?.lab_results || []} />
-          </section>
-        </aside>
+          </aside>
+        </section>
       </div>
     </div>
   );

@@ -24,20 +24,22 @@ interface MainProps {
 
 const Main: React.FC<MainProps> = ({ selectedPatient, mostRecentDiagnosis }) => {
   return (
-    <main className="w-[100%] overflow-auto scrollbar ">
+    <main className="w-[100%] overflow-auto lg:scrollbar ">
       <section className=" scrollbar flex gap-12 justify-between flex-col py-6 px-3 bg-white rounded-lg ">
         <p className="text-[24px] font-bold">Diagnosis History</p>
 
-        <article className="rounded-md bg-[#F4F0FE] w-full flex gap-12 justify-between py-4 px-3">
-          <div className="w-[70%]">
+        <article className="rounded-md bg-[#F4F0FE] w-full flex flex-col sm:flex-row gap-12 sm:justify-between py-4 px-3">
+          <div className="sm:w-[70%] ">
             <header className="flex items-center justify-between mb-3">
               <p>Blood Pressure</p>
               <p>Last 6 months</p>
             </header>
+            <div className="w-full h-[20rem]">
             <PatientChart patient={selectedPatient} />
           </div>
+          </div>
 
-          <section className="w-[30%] justify-self-end space-y-4">
+          <section className="sm:w-[30%] sm:justify-self-end space-y-4">
             <section>
               <p>
                 <span className="inline-flex items-center justify-center gap-x-4 border border-solid border-[#E66FD2] rounded-full h-2 w-2 bg-[#E66FD2]"></span>{" "}
@@ -68,7 +70,7 @@ const Main: React.FC<MainProps> = ({ selectedPatient, mostRecentDiagnosis }) => 
           </section>
         </article>
 
-        <section className="flex gap-3 w-full">
+        <section className="flex gap-3 w-full flex-wrap">
           <PatientDetailSummary
             title="Respiratory Rate"
             value={mostRecentDiagnosis.respiratory_rate.value}

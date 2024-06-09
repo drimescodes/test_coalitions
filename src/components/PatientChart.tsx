@@ -65,7 +65,12 @@ const PatientChart: React.FC<Props> = ({ patient }) => {
     ],
   };
 
-  return <Line data={data} />;
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+  };
+
+  return <Line data={data} options={options}/>;
 };
 
 export default PatientChart;

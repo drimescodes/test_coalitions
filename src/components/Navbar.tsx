@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
@@ -10,10 +9,11 @@ import { Menu } from "lucide-react";
 
 export default function Component() {
   return (
-    <header className="flex h-16 w-full items-center px-4 md:px-6 rounded-full bg-white my-4 mx-auto overflow-hidden">
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button className="lg:hidden" size="icon" variant="outline" aria-label="Toggle navigation menu">
+    <header className="z-50 sticky top-4 flex h-16 w-full items-center px-4 md:px-6 rounded-full bg-white my-4 mx-auto overflow-hidden">
+    
+      <Sheet >
+        <SheetTrigger asChild >
+          <Button className="lg:hidden" size="icon" variant="outline" aria-label="Toggle navigation menu" >
             <Menu className="h-6 w-6" />
           </Button>
         </SheetTrigger>

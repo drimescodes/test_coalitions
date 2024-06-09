@@ -4,7 +4,7 @@ import Dashboard from './pages/Dashboard';
 
 const App: React.FC = () => {
   return (
-    <div className='bg-[#F4F0FE] px-4 text-[#072635]'>
+    <div className='bg-[#F4F0FE] px-2 sm:px-4 text-[#072635]'>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/patient/:patientName" element={<Dashboard />} />

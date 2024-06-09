@@ -24,7 +24,7 @@ const ProfileCard: React.FC<Props> = ({ patient, className }) => {
       <img src={patient.profile_picture} alt={`Profile picture of ${patient.name}`} className="mb-4" />
       <h2 className="font-semibold mb-6">{patient.name}</h2>
 
-      <section className="flex flex-col items-start space-y-6 text-[.8rem] w-full">
+      <section className="flex flex-col lg:items-start items-center  space-y-6 text-[.8rem] w-full">
         <section className="grid grid-cols-[auto_1fr] gap-3 w-full items-center">
           <img src={calendar} alt="Calendar icon" />
           <div>
